@@ -18,5 +18,6 @@ The layout of the book list should be a card/grid layout.
 See the attached image for an example. You can be creative and do not have to
 follow the design shown in the image.
 
-Please do not hesitate to contact me if you have any questions:
-petrus@dtn.net
+
+## Finished Test
+All the code is contained in 1 file `webPage.html` as simplest implication of the test-spec.
