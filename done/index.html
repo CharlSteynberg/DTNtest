@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BookHub</title>
+        <meta name = "viewport" content = "width=device-width", initial-scale=1>
+        <style>
+            html,body
+            {
+                height: 100%;
+                margin: 0px;
+                font-family: Arial,Helvitica,sans-serif;
+                font-size: 12px;
+                background-color: lilac;
+            }
+
+            h2
+            {
+                font-size:1rem;
+            }
+
+            zone
+            {
+                position: relative;
+                float: left;
+                width: 50%;
+                height: 80%;
+                box-sizing: border-box;
+                padding: 1rem;
+            }
+            zone.make
+            {
+                width: 30%;
+            }
+
+            zone.view
+            {
+                width: 70%;
+            }
+
+            zone.done
+            {
+                width: 100%;
+                height: 20%;
+            }
+
+            zone.make h2,input,textarea,button,line
+            {
+                display: block;
+                box-sizing: border-box;
+                width: 100%;
+                color: grey;
+                margin-bottom: 1.5rem;
+                resize: none;
+            }
+
+            zone.view h2
+            {
+                color: lightpink;
+            }
+
+            input,textarea
+            {
+                font-family: Arial,Helvitica,sans-serif;
+                font-size: 1rem;
+                padding: 0.5rem;
+                border: 2px solid lightgrey;
+            }
+
+            button
+            {
+                background-color: hsla(210,100%,60%,0.8);
+                font-size: 1rem;
+                color: white;
+                padding: 0.6rem;
+                border: none;
+                width: 12rem;
+                cursor: pointer;
+
+            }
+
+            line
+            {
+                display: block;
+                height: 1rem;
+                box-sizing: border-box;
+                border-top: 1px solid grey;
+
+            }
+
+            book
+            {
+                display: inline;
+                box-sizing: border-box;
+                width: 16rem;
+                height: 10rem;
+                border: 1px solid hsla(230,100%,50%,0.5);
+                border-top-right-radius: 4rem;
+                border-bottom-right-radius: 4rem;
+                cursor: pointer;
+                margin-right: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            book.show
+            {
+                display: inline-block;
+            }
+
+            book.hide
+            {
+                display: none;
+            }
+
+            book h1
+            {
+                display: block;
+                box-sizing: border-box;
+                background-color: hsla(220,100%,60%,0.3);
+                padding: 0.5rem;
+                font-size: 12px;
+                font-weight: bold;
+                color: hsla(150,100%,40%,0.8);
+                margin: 0px;
+            }
+
+            book p
+            {
+                margin: 0px;
+                padding: 0.5rem;
+                color: powderblue;
+            }
+
+            #template
+            {
+                display: none;
+            }
+        </style>
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <zone class="make">
+            <h2>add a book to read</h2>
+            <input id="bookName" type="text" placeholder="Book Title">
+            <textarea id="bookDesc" type="text" placeholder="Book Description"></textarea>
+            <button onclick="makeBook()">Add Book</button>
+            <line></line>
+            <input id="bookFind" type="text" placeholder="Filter Box" onkeyup="findBook(this.value)">
+        </zone>
+
+        <zone class="view" id="view">
+            <h2>click on a book to read</h2>
+
+            <book id="template">
+                <h1> {{ name }} </h1>
+                <p> {{ desc }} </p>
+            </book>
+        </zone>
+
+        <zone class="done">
+            <ul id="doneList"></ul>
+        </zone>
+    </body>
+</html>
