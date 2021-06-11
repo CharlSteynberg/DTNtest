@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BookHub</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="index.css"></link>
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <zone class="make">
+            <h2>add a book to read</h2>
+            <input id="bookName" type="text" placeholder="Book Title">
+            <textarea id="bookDesc" type="text" placeholder="Book Description"></textarea>
+            <button onclick="makeBook()">Add Book</button>
+            <line></line>
+            <input id="bookFind" type="text" placeholder="Filter Box" onkeyup="findBook(this.value)">
+        </zone>
+
+        <zone class="view" id="view">
+            <h2>click on a book to read</h2>
+
+            <book id="template">
+                <h1> {{ name }} </h1>
+                <p> {{ desc }} </p>
+            </book>
+        </zone>
+
+        <zone class="done">
+            <ul id="doneList"></ul>
+        </zone>
+    </body>
+</html>
