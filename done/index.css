@@ -1,4 +1,4 @@
-style
+
     html,body
     {
         height: 100%;
@@ -84,7 +84,7 @@ style
 
     book
     {
-        display: inline;
+        display: inline-block;
         box-sizing: border-box;
         width: 16rem;
         height: 10rem;
@@ -129,4 +129,3 @@ style
     {
         display: none;
     }
-</style>
